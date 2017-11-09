@@ -1,0 +1,24 @@
+#############################################
+#      PYAUDIO ANALISYS INSTRUCTIONS        #
+#                                           #
+#      Enrique Galan Platas                 #
+#      Bruno Vergarai                       #
+#                                           #
+#      Asistente Geriatrico proyecto        #
+#                                           #
+#############################################
+
+
+El proyecto estara corriendo continuamente sin embargo
+para elaborar el proceso manualmente puede consultar estos
+comandos.
+
+ENTRENAMIENTO
+
+python2 audioAnalysis.py trainClassifier -i data/proyecto/respiPat data/proyecto/gritos data/proyecto/tos --method svm -o data/svmSM
+python2 audioAnalysis.py trainClassifier -i <<<path for audio files type 1>>> <<<path for audio files type 2>>> 
+<<<path for audio files type 3>>> --method svm -o <<<output path>>>
+
+CLASIFICAR
+
+python2 audioAnalysis.py classifyFile -i test.wav --model svm --classifier data/svmSM
